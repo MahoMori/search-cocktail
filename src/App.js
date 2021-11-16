@@ -6,7 +6,6 @@ import axios from 'axios'
 import Card from './components/Card'
 
 import ImageList from '@mui/material/ImageList';
-import Button from '@mui/material/Button';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
 function App() {

@@ -5,13 +5,17 @@ import axios from 'axios'
 
 import Card from './components/Card'
 
+import ImageList from '@mui/material/ImageList';
+
 function App() {
   let keyword = useRef(null)
 
   const [drinksData, setDrinksData] = useState([])
-  // const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${keyword.current.value}`
 
   const handleSearch = () => {
+    if(drinksData) {
+      setDrinksData([])
+    }
     axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${keyword.current.value}`).then((response) => {
       response.data.drinks.map(
         drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
@@ -29,13 +33,14 @@ function App() {
         {/* {drinksData && <div>{drinksData.map((drink, i) => <p key={i}>{drink.strDrink}</p>)}</div>} */}
       </div>
       
-      <div>
-      {drinksData && 
-        drinksData.map((drink, key) => (
-          <Card drink={drink} key={key} />
-        ))
-      }
-      </div>
+      
+      <ImageList cols={4} gap={20}>
+        {drinksData && 
+          drinksData.map((drink, key) => (
+            <Card drink={drink} key={key} />
+          ))
+        }
+      </ImageList>
     </div>
   );
 }

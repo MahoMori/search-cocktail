@@ -1,10 +1,18 @@
 import React from 'react'
 
-const Card = () => {
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import ImageListItem from '@mui/material/ImageListItem';
+
+const Card = ({drink}) => {
     return (
-        <div>
-            
-        </div>
+        <ImageListItem key={drink.strDrinkThumb}>
+            <img
+                src={`${drink.strDrinkThumb}?w=164&h=164&fit=crop&auto=format`}
+                alt={drink.strDrink}
+            />
+
+            <ImageListItemBar title={drink.strDrink} />
+        </ImageListItem>
     )
 }
 

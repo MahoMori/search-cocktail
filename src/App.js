@@ -3,6 +3,8 @@ import './App.css';
 import {useState, useRef} from 'react'
 import axios from 'axios'
 
+import Card from './components/Card'
+
 function App() {
   let keyword = useRef(null)
 
@@ -19,12 +21,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to Bar Cocktailedge</h1>
-      <h3>Your one and only (online) bartender to teach you about cocktails</h3>
-      <input type="text" ref={keyword} />
-      <button onClick={handleSearch}>Search</button>
-      {drinksData && <div>{drinksData.map((drink, i) => <p key={i}>{drink.strDrink}</p>)}</div>}
+      <div>
+        <h1>Welcome to Bar Cocktailedge</h1>
+        <h3>Your one and only (online) bartender to teach you about cocktails</h3>
+        <input type="text" ref={keyword} />
+        <button onClick={handleSearch}>Search</button>
+        {/* {drinksData && <div>{drinksData.map((drink, i) => <p key={i}>{drink.strDrink}</p>)}</div>} */}
+      </div>
       
+      <div>
+      {drinksData && 
+        drinksData.map((drink, key) => (
+          <Card drink={drink} key={key} />
+        ))
+      }
+      </div>
     </div>
   );
 }

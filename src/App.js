@@ -4,12 +4,16 @@ import {useState} from 'react'
 import axios from 'axios'
 
 import Card from './components/Card'
+import ModalComponent from './components/ModalComponent'
 
 import ImageList from '@mui/material/ImageList';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const [drinksData, setDrinksData] = useState([])
   const [searchWord, setSearchWord] = useState("")
@@ -48,14 +52,15 @@ function App() {
           {drinksData && drinksData !== "none"
             ? <ImageList cols={4} gap={20}>
               {drinksData.map((drink, key) => (
-                <Card drink={drink} key={key} />
+                <>
+                  <Card drink={drink} key={key} handleOpen={handleOpen} />
+                  <ModalComponent open={open} key={key} handleClose={handleClose}/>
+                </>
               ))}
               </ImageList>
             : <p>Forgive my ignorance. Could you try other words?</p>
           }
       </main>
-
-      
 
     </div>
   );

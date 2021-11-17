@@ -28,7 +28,15 @@ const ModalComponent = ({open, handleClose}) => {
           >
             <Box sx={style}>
               <div>
-                <p>this is a text</p>
+                <p>Some text</p>
+                {/* <h3>{}</h3>
+                <img
+                    src={`${drink.strDrinkThumb}?w=164&h=164&fit=crop&auto=format`}
+                    alt={drink.strDrink}
+                    // onClick={handleOpen}
+                    // onClick={(e) => console.log(e.target)}
+                    key={drink.idDrink}
+                /> */}
               </div>
             </Box>
           </Modal>

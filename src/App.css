@@ -8,20 +8,19 @@ header {
 }
 
 .bar-name {
-  /* color: #1dee1d; */
   color: #15cc15;
 }
 
-h2{
+.header-subtitle{
   font-style: italic;
   letter-spacing: 0.2rem;
+  font-weight: lighter;
 
   text-shadow: 
     0 -1px 0 #fff, 
     0 1px 0 rgb(21, 204, 21), 
     0 2px 0 rgb(19, 202, 19), 
-    0 3px 0 rgb(17, 200, 17), 
-    0 22px 30px rgba(0, 0, 0, 0.9);
+    0 3px 0 rgb(17, 200, 17);
 }
 
 input {
@@ -44,20 +43,61 @@ input {
 main {
   width: 90%;
   margin: 80px auto;
+  font-family: 'Arima Madurai', cursive;
+}
+
+.no-match {
+  color: #fff;
+  font-size: 1.25rem;
+  letter-spacing: 0.1rem;
   font-family: 'Pattaya', sans-serif;
 }
 
+.MuiImageListItemBar-title {
+  letter-spacing: 0.05rem;
+  font-weight: bold;
+}
+
+
+
+
+
 .modal-name {
   text-align: center;
+  font-weight: bold;
 }
 
 .modal-img {
   width: 100%;
-  /* height:  */
+  color: #d1d1d1;
 }
 
-.MuiImageListItemBar-title {
-  font-family: 'Arima Madurai', cursive;
-  letter-spacing: 0.05rem;
-  font-weight: bold;
+p {
+  margin: 5px 0;
 }
+
+.MuiBox-root {
+  font-family: 'Arima Madurai', cursive;
+}
+
+.modal-item-title {
+  font-weight: 700;
+  text-decoration: underline;
+  margin: 5px 0;
+}
+
+.modal-child-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ingredients-measures {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.ingredients-measures div:first-child {
+  margin-left: 20px;
+}
+
+

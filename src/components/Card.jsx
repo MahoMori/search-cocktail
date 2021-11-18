@@ -1,7 +1,5 @@
 import React from 'react'
 
-import ModalComponent from './ModalComponent'
-
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ImageListItem from '@mui/material/ImageListItem';
 

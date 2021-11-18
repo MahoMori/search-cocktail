@@ -45,7 +45,7 @@ function App() {
     <div className="App">
       <header>
         <h1>Welcome to <span class="bar-name">Bar Cocktailedge</span></h1>
-        <h2>Your one and only (online) bartender to teach you about cocktails</h2>
+        <h2 className="header-subtitle">Your one and only (online) bartender to teach you about cocktails</h2>
         <form onSubmit={handleSearch}>
           <input type="text" placeholder="Ask me..." value={searchWord} onChange={e => setSearchWord(e.target.value)} />
           {/* <OutlinedInput placeholder="Search" size="small" value={searchWord} onChange={e => setSearchWord(e.target.value)} />
@@ -60,7 +60,7 @@ function App() {
                 <Card drink={drink} key={drink.idDrink} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} />
               ))}
               </ImageList>
-            : <p>Forgive my ignorance. Could you try other words?</p>
+            : <p className='no-match'>Forgive my ignorance. Could you try other words?</p>
           }
           <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
       </main>

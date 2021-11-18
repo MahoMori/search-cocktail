@@ -10,3 +10,12 @@ main {
   width: 90%;
   margin: 80px auto;
 }
+
+.modal-name {
+  text-align: center;
+}
+
+.modal-img {
+  width: 100%;
+  /* height:  */
+}

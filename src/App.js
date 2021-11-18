@@ -18,6 +18,8 @@ function App() {
   const [drinksData, setDrinksData] = useState([])
   const [searchWord, setSearchWord] = useState("")
 
+  const [eachDrinkData, setEachDrinkData] = useState({})
+
   const handleSearch = (e) => {
     e.preventDefault()
     if(drinksData) {
@@ -52,14 +54,12 @@ function App() {
           {drinksData && drinksData !== "none"
             ? <ImageList cols={4} gap={20}>
               {drinksData.map((drink) => (
-                <>
-                  <Card drink={drink} key={drink.idDrink} handleOpen={handleOpen}/>
-                  <ModalComponent open={open} handleClose={handleClose}/>
-                </>
+                <Card drink={drink} key={drink.idDrink} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} />
               ))}
               </ImageList>
             : <p>Forgive my ignorance. Could you try other words?</p>
           }
+          <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
       </main>
 
     </div>

@@ -96,7 +96,11 @@ main {
 
 /* Smartphone */
 @media (max-width: 320px) {
-
+  /* .MuiImageList-root {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  } */
+  
 }
 
 @media (min-width: 321px) and (max-width: 500px) {
@@ -159,3 +163,28 @@ main {
 }
 
 
+
+/* Smartphone */
+@media (max-width: 320px) {
+  /* .css-mhc70k-MuiGrid-root {
+    flex-direction: column !important;
+  } */
+}
+
+@media (min-width: 321px) and (max-width: 500px) {
+
+}
+
+/* Tablet */
+@media (min-width: 501px) and (max-width: 768px) {
+
+}
+
+/* Normal */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+@media (min-width: 1441px) {
+
+}

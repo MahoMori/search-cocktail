@@ -10,14 +10,14 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '70%',
-  height: 900,
+  height: 450,
   bgcolor: '#d1d1d1',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
 
-const ModalComponent = ({open, handleClose, eachDrinkData}) => {
+const ModalComponentIngredients = ({open, handleClose, eachDrinkData}) => {
 
     
     return (
@@ -93,4 +93,4 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
     )
 }
 
-export default ModalComponent
+export default ModalComponentIngredients

@@ -81,7 +81,7 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                     
                     
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs={4} zeroMinWidth>
                     <p className="modal-item-title">Instruction:</p>
                     <p>{eachDrinkData.strInstructions}</p>
                   </Grid>

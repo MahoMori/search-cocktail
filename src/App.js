@@ -7,8 +7,6 @@ import Card from './components/Card'
 import ModalComponent from './components/ModalComponent'
 
 import ImageList from '@mui/material/ImageList';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import TextField from '@mui/material/TextField';
 
 
 function App() {
@@ -44,12 +42,10 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Welcome to <span class="bar-name">Bar Cocktailedge</span></h1>
+        <h1>Welcome to <span class="bar-name">Bar&nbsp;Cocktailedge</span></h1>
         <h2 className="header-subtitle">Your one and only (online) bartender to teach you about cocktails</h2>
         <form onSubmit={handleSearch}>
           <input type="text" placeholder="Ask me..." value={searchWord} onChange={e => setSearchWord(e.target.value)} />
-          {/* <OutlinedInput placeholder="Search" size="small" value={searchWord} onChange={e => setSearchWord(e.target.value)} />
-          <TextField id="filled-basic" label="Filled" variant="filled" /> */}
         </form>
       </header>
       

@@ -40,7 +40,6 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                   </Grid>
 
                   <Grid item xs={4}>
-                    <div className='modal-parent-div'>
 
                       <div className='modal-child-column'>
                         <p className="modal-item-title">Category:</p>
@@ -79,8 +78,6 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                           return <div>{measure}</div>
                         })()}
                       </div>
-
-                    </div>
                     
                     
                   </Grid>

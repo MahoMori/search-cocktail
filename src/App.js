@@ -4,6 +4,7 @@ import {useState} from 'react'
 import axios from 'axios'
 
 import Card from './components/Card'
+import ModalComponent from './components/ModalComponent'
 
 import ImageList from '@mui/material/ImageList';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -11,9 +12,14 @@ import TextField from '@mui/material/TextField';
 
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {setOpen(true)};
+  const handleClose = () => setOpen(false);
 
   const [drinksData, setDrinksData] = useState([])
   const [searchWord, setSearchWord] = useState("")
+
+  const [eachDrinkData, setEachDrinkData] = useState({})
 
   const handleSearch = (e) => {
     e.preventDefault()
@@ -50,15 +56,14 @@ function App() {
       <main>
           {drinksData && drinksData !== "none"
             ? <ImageList cols={4} gap={20}>
-              {drinksData.map((drink, key) => (
-                <Card drink={drink} key={key} />
+              {drinksData.map((drink) => (
+                <Card drink={drink} key={drink.idDrink} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} />
               ))}
               </ImageList>
             : <p>Forgive my ignorance. Could you try other words?</p>
           }
+          <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
       </main>
-
-      
 
     </div>
   );

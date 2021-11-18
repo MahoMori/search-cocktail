@@ -47,6 +47,15 @@ main {
   font-family: 'Pattaya', sans-serif;
 }
 
+.modal-name {
+  text-align: center;
+}
+
+.modal-img {
+  width: 100%;
+  /* height:  */
+}
+
 .MuiImageListItemBar-title {
   font-family: 'Arima Madurai', cursive;
   letter-spacing: 0.05rem;

@@ -10,11 +10,18 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '70%',
-  height: 450,
   bgcolor: '#d1d1d1',
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+  overflow:'scroll',
+  height: {
+    xs: 380,
+    sm: 380,
+    md: 450,
+    lg: 450,
+    xl: 800,
+  },
 };
 
 const ModalComponent = ({open, handleClose, eachDrinkData}) => {
@@ -31,7 +38,7 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
               <div>
                 <h1 className='modal-name'>- {eachDrinkData.strDrink} -</h1>
                 <Grid container spacing={2}>
-                  <Grid item xs={4}>
+                  <Grid item xs={12} sm={4} md={4}>
                     <img
                       className='modal-img' 
                       src={eachDrinkData.strDrinkThumb}
@@ -39,7 +46,7 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                     />
                   </Grid>
 
-                  <Grid item xs={4}>
+                  <Grid item xs={12} sm={8} md={4}>
 
                       <div className='modal-child-column'>
                         <p className="modal-item-title">Category:</p>
@@ -78,13 +85,14 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                           return <div>{measure}</div>
                         })()}
                       </div>
-                    
-                    
+                      
                   </Grid>
-                  <Grid item xs={4} zeroMinWidth>
+
+                  <Grid item xs={12} sm={12} md={4}>
                     <p className="modal-item-title">Instruction:</p>
                     <p>{eachDrinkData.strInstructions}</p>
                   </Grid>
+
                 </Grid>
                 
               </div>
@@ -94,3 +102,4 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
 }
 
 export default ModalComponent
+

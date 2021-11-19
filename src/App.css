@@ -95,20 +95,22 @@ main {
 }
 
 /* Smartphone */
-@media (max-width: 320px) {
-  /* .MuiImageList-root {
+@media (max-width: 500px) {
+
+  .MuiImageList-root {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
-  } */
+  }
   
-}
-
-@media (min-width: 321px) and (max-width: 500px) {
-
 }
 
 /* Tablet */
 @media (min-width: 501px) and (max-width: 768px) {
+
+  .MuiImageList-root {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
 
 }
 
@@ -118,6 +120,11 @@ main {
 }
 
 @media (min-width: 1441px) {
+
+  .MuiImageList-root {
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 50px !important;
+  }
 
 }
 

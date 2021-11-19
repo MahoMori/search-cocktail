@@ -23,6 +23,28 @@ header {
     0 3px 0 rgb(17, 200, 17);
 }
 
+.search-button {
+  border: solid #15cc15 2px;
+  border-radius: 2px;
+  width: 250px;
+  height: 40px;
+  margin: 10px 30px;
+  font-size: 1.25rem;
+  font-family: 'Pattaya', sans-serif;
+  background-color: transparent;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #15cc15;
+}
+
+.search-button:focus {
+  background-color: #15cc15;
+}
+
 input {
   outline: none;
   border-bottom: solid #15cc15 2px;
@@ -82,6 +104,10 @@ main {
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
   font-family: 'Pattaya', sans-serif;
+}
+
+.MuiImageList-root {
+  margin: 80px auto;
 }
 
 .MuiImageList-root li {

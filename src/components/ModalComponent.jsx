@@ -15,6 +15,7 @@ const style = {
   border: '2px solid #000',
   boxShadow: 24,
   p: 4,
+  overflow:'scroll',
 };
 
 const ModalComponent = ({open, handleClose, eachDrinkData}) => {
@@ -31,7 +32,7 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
               <div>
                 <h1 className='modal-name'>- {eachDrinkData.strDrink} -</h1>
                 <Grid container spacing={2}>
-                  <Grid item xs={4}>
+                  <Grid item xs={12} sm={4} md={4}>
                     <img
                       className='modal-img' 
                       src={eachDrinkData.strDrinkThumb}
@@ -39,7 +40,7 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                     />
                   </Grid>
 
-                  <Grid item xs={4}>
+                  <Grid item xs={12} sm={4} md={4}>
 
                       <div className='modal-child-column'>
                         <p className="modal-item-title">Category:</p>
@@ -78,13 +79,14 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                           return <div>{measure}</div>
                         })()}
                       </div>
-                    
-                    
+                      
                   </Grid>
-                  <Grid item xs={4}>
+
+                  <Grid item xs={12} sm={12} md={4}>
                     <p className="modal-item-title">Instruction:</p>
                     <p>{eachDrinkData.strInstructions}</p>
                   </Grid>
+
                 </Grid>
                 
               </div>
@@ -94,3 +96,4 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
 }
 
 export default ModalComponent
+

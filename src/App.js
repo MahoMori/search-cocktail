@@ -15,6 +15,10 @@ function App() {
   const handleClose = () => setOpen(false);
 
   const [searchButton, setSearchButton] = useState(null)
+  const [buttonClicked, setButtonClicked] = useState({
+    name: false,
+    ingredient: false
+  })
 
   const [drinksData, setDrinksData] = useState([])
   const [searchWord, setSearchWord] = useState("")
@@ -72,8 +76,27 @@ function App() {
       <header>
         <h1>Welcome to <span className="bar-name">Bar&nbsp;Cocktailedge</span></h1>
         <h2 className="header-subtitle">Your one and only (online) bartender to teach you about cocktails</h2>
-        <button className="search-button" onClick={() => setSearchButton("name")}>Search by Name</button>
-        <button className="search-button" onClick={() => setSearchButton("ingredient")}>Search by Ingredient</button>
+
+        <button
+          className={
+            "search-button " + (buttonClicked.name ? "button-clicked" : "")
+          }
+          onClick={() => {
+            setSearchButton("name")
+            setButtonClicked({name: true, ingredient: false})
+          }}
+        >Search by Name</button>
+
+        <button
+          className={
+            "search-button " + (buttonClicked.ingredient ? "button-clicked" : "")
+          }
+          onClick={() => {
+            setSearchButton("ingredient")
+            setButtonClicked({name: false, ingredient: true})
+          }}
+        >Search by Ingredient</button>
+
         <form onSubmit={handleSearch}>
           <input type="text" placeholder="Ask me..." value={searchWord} onChange={e => setSearchWord(e.target.value)} />
         </form>

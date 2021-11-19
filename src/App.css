@@ -37,11 +37,11 @@ header {
   cursor: pointer;
 }
 
-.search-button:hover {
+.button-clicked {
   background-color: #15cc15;
 }
 
-.search-button:focus {
+.search-button:hover {
   background-color: #15cc15;
 }
 

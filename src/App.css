@@ -143,6 +143,11 @@ main {
 
 .MuiBox-root {
   font-family: 'Arima Madurai', cursive;
+  -ms-overflow-style: none;
+}
+
+.MuiBox-root::-webkit-scrollbar{
+  display: none;
 }
 
 .MuiBox-root p {
@@ -168,7 +173,6 @@ main {
 .ingredients-measures div:first-child {
   margin-left: 20px;
 }
-
 
 
 /* Smartphone */

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import axios from 'axios';
+
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Grid from '@mui/material/Grid';
@@ -24,8 +26,12 @@ const style = {
   },
 };
 
-const ModalComponent = ({open, handleClose, eachDrinkData}) => {
+const ModalComponent = ({open, handleClose, eachDrinkData, setEachDrinkData}) => {
 
+  // axios(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${eachDrinkData.idDrink}`).then((response) => {
+  //   setEachDrinkData(response)
+  // })
+  
     
     return (
         <Modal
@@ -43,6 +49,7 @@ const ModalComponent = ({open, handleClose, eachDrinkData}) => {
                       className='modal-img' 
                       src={eachDrinkData.strDrinkThumb}
                       alt={eachDrinkData.strDrink}
+                      onClick={() => console.log(eachDrinkData.idDrink)}
                     />
                   </Grid>
 

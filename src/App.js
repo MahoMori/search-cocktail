@@ -63,7 +63,6 @@ function App() {
       default:
         alert("Plase select \"Search by Name\" or \"Search by Ingredient\"")
       }
-    
 
     setSearchWord("")
   }
@@ -94,7 +93,7 @@ function App() {
               case "name":
                 return <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
               case "ingredient":
-                return <ModalComponentIngredients open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
+                return <ModalComponentIngredients open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} setEachDrinkData={setEachDrinkData} />
               default:
                 return
             }

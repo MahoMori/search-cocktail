@@ -44,13 +44,18 @@ function App() {
 
       case "ingredient":
         axios(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchWord}`).then((response) => {
-          let drinksList = response.data.drinks
-          if(drinksList === null) {
+          console.log(response.data)
+          if(response.data !== "") {
+            let drinksList = response.data.drinks
+            if(drinksList === null) {
+              setDrinksData("none")
+            } else {
+              drinksList.map(
+                drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
+              )
+            }
+          }else{
             setDrinksData("none")
-          } else {
-            drinksList.map(
-              drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
-            )
           }
         })
         break

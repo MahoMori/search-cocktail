@@ -76,6 +76,9 @@ function App() {
       <header>
         <h1>Welcome to <span className="bar-name">Bar&nbsp;Cocktailedge</span></h1>
         <h2 className="header-subtitle">Your one and only (online) bartender to teach you about cocktails</h2>
+        
+        <button className="keywords-or-list">Search with Keywords</button>
+        <button className="keywords-or-list">Show Full List</button>
 
         <button
           className={

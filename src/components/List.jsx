@@ -6,10 +6,17 @@ import ListComponent from './ListComponent'
 
 const alphanumeric = '0123456789abcdefghijklmnopqrstuvwxyz'
 
-const List = () => {
+const List = ({setDrinksData, drinksData, handleOpen, setEachDrinkData, open, handleClose, eachDrinkData}) => {
+    const [letter, setLetter] = useState('')
+
     return (
         <div>
-            {alphanumeric.split('').map((letter, i) => (<ListComponent letter={letter} key={i}/>))}
+            {alphanumeric.split('').map((letter, i) => (
+                <ul>
+                    <li key={i} onClick={() => {setLetter(letter)}} style={{color: 'white'}}>{letter}</li>
+                </ul>
+            ))}
+            <ListComponent letter={letter} setDrinksData={setDrinksData} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} open={open} handleClose={handleClose} eachDrinkData={eachDrinkData}/>
         </div>
     )
 }

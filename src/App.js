@@ -136,7 +136,7 @@ function App() {
       <Routes>
           {/* <Route path="/" element={<Home />} /> */}
           {/* <Route path="/search" element={<Search />} /> */}
-          <Route path="/list" element={<List />} />
+          <Route path="/list" element={<List setDrinksData={setDrinksData} drinksData={drinksData} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData}/>} open={open} handleClose={handleClose} eachDrinkData={eachDrinkData}/>
       </Routes>
 
     </div>

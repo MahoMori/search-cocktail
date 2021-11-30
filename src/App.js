@@ -7,7 +7,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import Card from './components/Card'
 import ModalComponent from './components/ModalComponent'
-// import Search from './components/Search'
+import Search from './components/Search'
 import List from './components/List'
 
 import ImageList from '@mui/material/ImageList';
@@ -82,9 +82,9 @@ function App() {
         <h2 className="header-subtitle">Your one and only (online) bartender to teach you about cocktails</h2>
         
         <button className="keywords-or-list">
-          {/* <Link to="/search"> */}
+          <Link to="/search">
             Search with Keywords
-          {/* </Link> */}
+          </Link>
         </button>
         <button className="keywords-or-list">
           <Link to="/list">
@@ -93,10 +93,10 @@ function App() {
         </button>
 
         {/* <Home eachDrinkData={eachDrinkData} setEachDrinkData={setEachDrinkData} open={open} handleOpen={handleOpen} handleClose={handleClose} /> */}
-
+      </header>
         
 
-        <button
+        {/* <button
           className={
             "search-button " + (buttonClicked.name ? "button-clicked" : "")
           }
@@ -131,11 +131,11 @@ function App() {
             : <p className='no-match'>Forgive my ignorance. Could you try other words?</p>
           }
           <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
-      </main>
+      </main> */}
 
       <Routes>
           {/* <Route path="/" element={<Home />} /> */}
-          {/* <Route path="/search" element={<Search />} /> */}
+          <Route path="/search" element={<Search />} />
           <Route path="/list" element={<List setDrinksData={setDrinksData} drinksData={drinksData} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData}/>} open={open} handleClose={handleClose} eachDrinkData={eachDrinkData}/>
       </Routes>
 

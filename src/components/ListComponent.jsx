@@ -9,28 +9,39 @@ import ModalComponent from './ModalComponent'
 import ImageList from '@mui/material/ImageList';
 
 
-const ListComponent = ({letter, setDrinksData, drinksData, handleOpen, setEachDrinkData, open, handleClose, eachDrinkData}) => {
-    useEffect(() => {axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`).then((response) => {
+const ListComponent = ({setLetter, letter, setDrinksData, drinksData, handleOpen, setEachDrinkData, open, handleClose, eachDrinkData}) => {
+  
+    useEffect(() => {
+      if(letter) {
+        axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`).then((response) => {
         let drinksList = response.data.drinks
         setDrinksData([])
           if(drinksList === null) {
             setDrinksData("none")
           } else {
             drinksList.map(
-              drink => {setDrinksData(prevDrinksData => [...prevDrinksData, drink])}
+              drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
             )
           }
-    })}, [letter])
+        setLetter('')
+    })}}, [letter])
+
 
 
     return (
         <>
         {drinksData && drinksData !== "none"
-            ? <div>
-                {drinksData.map((drink) => (<div>{drink}</div>))}
-            </div>
+            ?  <>
+            <ImageList cols={4} gap={50}>
+              {drinksData.map((drink) => (
+                <Card drink={drink} key={drink.idDrink} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} />
+              ))}
+              </ImageList>
+              </>
             : <p className='no-match'>Forgive my ignorance. Could you try other words?</p>
           }
+          
+        
           {/* <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} /> */}
         </>
     )

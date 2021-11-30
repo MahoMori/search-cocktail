@@ -1,16 +1,13 @@
 import './App.css';
 
-import {useState} from 'react'
 import axios from 'axios'
+
+import {useState, useEffect} from 'react'
 import { Routes, Route, Link } from "react-router-dom";
 
-
-import Card from './components/Card'
-import ModalComponent from './components/ModalComponent'
+import Home from './components/Home'
 import Search from './components/Search'
 import List from './components/List'
-
-import ImageList from '@mui/material/ImageList';
 
 
 function App() {
@@ -29,6 +26,12 @@ function App() {
 
   const [eachDrinkData, setEachDrinkData] = useState({})
 
+  useEffect(() => {
+    axios('https://www.thecocktaildb.com/api/json/v1/1/random.php').then((response) => {
+        setEachDrinkData(response.data.drinks[0])
+    })
+  }, [])
+
   return (
     <div className="App">
       <header>
@@ -46,14 +49,13 @@ function App() {
           </Link>
         </button>
 
-        {/* <Home eachDrinkData={eachDrinkData} setEachDrinkData={setEachDrinkData} open={open} handleOpen={handleOpen} handleClose={handleClose} /> */}
       </header>
         
 
         
 
       <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/" element={<Home eachDrinkData={eachDrinkData} setEachDrinkData={setEachDrinkData} open={open} handleOpen={handleOpen} handleClose={handleClose} />} />
           <Route path="/search" element={<Search />} />
           <Route path="/list" element={<List setDrinksData={setDrinksData} drinksData={drinksData} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData}/>} open={open} handleClose={handleClose} eachDrinkData={eachDrinkData}/>
       </Routes>

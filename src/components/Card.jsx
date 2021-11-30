@@ -9,7 +9,6 @@ const Card = ({drink, handleOpen, setEachDrinkData}) => {
             <ImageListItem key={drink.strDrinkThumb} onClick={()=> {
                 handleOpen()
                 setEachDrinkData(drink)
-                console.log(drink)
             }}>
                 <img
                     src={`${drink.strDrinkThumb}?w=164&h=164&fit=crop&auto=format`}

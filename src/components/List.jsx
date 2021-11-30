@@ -4,7 +4,6 @@ import {useState} from 'react'
 import { Routes, Route, Link, useParams } from "react-router-dom";
 
 import ListComponent from './ListComponent'
-import Test from './Test'
 
 const alphanumeric = '0123456789abcdefghijklmnopqrstuvwxyz'
 

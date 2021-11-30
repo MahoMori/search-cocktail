@@ -71,7 +71,7 @@ const Search = () => {
 
     return (
         <>
-            <section>
+            <section className="search">
                 <button
                 className={
                     "search-button " + (buttonClicked.name ? "button-clicked" : "")

@@ -26,18 +26,17 @@ function App() {
 
   const [eachDrinkData, setEachDrinkData] = useState({})
 
-  useEffect(() => {
-    axios('https://www.thecocktaildb.com/api/json/v1/1/random.php').then((response) => {
-        setEachDrinkData(response.data.drinks[0])
-    })
-  }, [])
-
   return (
     <div className="App">
       <header>
         <h1>Welcome to <span className="bar-name">Bar&nbsp;Cocktailedge</span></h1>
         <h2 className="header-subtitle">Your one and only (online) bartender to teach you about cocktails</h2>
         
+        <button className="keywords-or-list">
+          <Link to="/">
+            Home
+          </Link>
+        </button>
         <button className="keywords-or-list">
           <Link to="/search">
             Search with Keywords

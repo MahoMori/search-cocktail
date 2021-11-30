@@ -12,14 +12,15 @@ const List = ({setDrinksData, drinksData, handleOpen, setEachDrinkData, open, ha
     const [letter, setLetter] = useState('')
 
     return (
-        <div>
-            {alphanumeric.split('').map((letter, i) => (
-                <ul>
-                    <li key={i} onClick={() => {setLetter(letter)}} style={{color: 'white'}}>{letter}</li>
-                </ul>
-            ))}
+        <section className="list">
+            <ul>
+                {alphanumeric.split('').map((letter, i) => (
+                    <li key={i} onClick={() => {setLetter(letter)}} className="list-li">{letter}</li>
+                ))}
+            </ul>
+            <div className="clr"></div>
             <ListComponent letter={letter} setLetter={setLetter} drinksData={drinksData} setDrinksData={setDrinksData} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} open={open} handleClose={handleClose} eachDrinkData={eachDrinkData}/>
-        </div>
+        </section>
     )
 }
 

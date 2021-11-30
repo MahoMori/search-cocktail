@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 import Card from './Card'
@@ -23,60 +23,55 @@ const Search = () => {
 
     const [eachDrinkData, setEachDrinkData] = useState({})
 
-    const [submitted, setSubmitted] = useState(false)
+    const handleSearch = (e) => {
+        e.preventDefault()
+        if(drinksData) {
+        setDrinksData([])
+        }
 
-    // const handleSearch = (e) => {
-    //     useEffect()
-    //     e.preventDefault()
-    //     if(drinksData) {
-    //     setDrinksData([])
-    //     }
+        switch(searchButton) {
+        case "name":
+            axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchWord}`).then((response) => {
+            let drinksList = response.data.drinks
+            if(drinksList === null) {
+                setDrinksData("none")
+            } else {
+                drinksList.map(
+                drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
+                )
+            }
+            })
+            break
 
-    //     switch(searchButton) {
-    //     case "name":
-    //         axios(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchWord}`).then((response) => {
-    //         let drinksList = response.data.drinks
-    //         if(drinksList === null) {
-    //             setDrinksData("none")
-    //         } else {
-    //             drinksList.map(
-    //             drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
-    //             )
-    //         }
-    //         })
-    //         break
-
-    //     case "ingredient":
-    //         axios(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchWord}`).then((response) => {
-    //         if(response.data !== "") {
-    //             let drinksList = response.data.drinks
-    //             drinksList.map(
-    //             drink => modalIngredientData(drink.idDrink)
-    //             // drink => setDrinksData(prevDrinksData => [...prevDrinksData, drink])
-    //             )
-    //         }else{
-    //             setDrinksData("none")
-    //         }
-    //         })
-    //         break
+        case "ingredient":
+            axios(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchWord}`).then((response) => {
+            if(response.data !== "") {
+                let drinksList = response.data.drinks
+                drinksList.map(
+                drink => modalIngredientData(drink.idDrink)
+                )
+            }else{
+                setDrinksData("none")
+            }
+            })
+            break
         
-    //     default:
-    //         alert("Plase select \"Search by Name\" or \"Search by Ingredient\"")
-    //     }
-    //     setSearchWord("")
-    // }
+        default:
+            alert("Plase select \"Search by Name\" or \"Search by Ingredient\"")
+        }
+        setSearchWord("")
+    }
 
-    // const modalIngredientData = (id) => {
-    //     axios(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`).then((response) => {
-    //     setDrinksData(prevDrinksData => [...prevDrinksData, response.data.drinks[0]])
-    //     })
-    // }
+    const modalIngredientData = (id) => {
+        axios(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`).then((response) => {
+        setDrinksData(prevDrinksData => [...prevDrinksData, response.data.drinks[0]])
+        })
+    }
 
 
     return (
         <>
-        <h1>hello</h1>
-            {/* <section>
+            <section>
                 <button
                 className={
                     "search-button " + (buttonClicked.name ? "button-clicked" : "")
@@ -112,7 +107,7 @@ const Search = () => {
                     : <p className='no-match'>Forgive my ignorance. Could you try other words?</p>
                 }
                 <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} />
-            </main> */}
+            </main>
            
         </>
     )

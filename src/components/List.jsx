@@ -16,17 +16,10 @@ const List = ({setDrinksData, drinksData, handleOpen, setEachDrinkData, open, ha
         <div>
             {alphanumeric.split('').map((letter, i) => (
                 <ul>
-                {/* <Link to={`/list/${letter}`}> */}
                     <li key={i} onClick={() => {setLetter(letter)}} style={{color: 'white'}}>{letter}</li>
-                {/* </Link> */}
                 </ul>
             ))}
             <ListComponent letter={letter} setLetter={setLetter} drinksData={drinksData} setDrinksData={setDrinksData} handleOpen={handleOpen} setEachDrinkData={setEachDrinkData} open={open} handleClose={handleClose} eachDrinkData={eachDrinkData}/>
-            {/* {letter && <Test letter={letter}/>} */}
-
-            {/* <Routes>
-                <Route path="/list/:slug" element={<Test letter={letter}/>}></Route>
-            </Routes> */}
         </div>
     )
 }

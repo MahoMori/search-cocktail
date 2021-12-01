@@ -44,7 +44,7 @@ function App() {
         </button>
         <button className="keywords-or-list">
           <Link to="/list">
-            Show Full List
+            Show List
           </Link>
         </button>
 

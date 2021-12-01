@@ -40,8 +40,6 @@ const ListComponent = ({setLetter, letter, setDrinksData, drinksData, handleOpen
               </>
             : <p className='no-match'>Forgive my ignorance. Could you try other words?</p>
           }
-          
-        
           {/* <ModalComponent open={open} handleClose={handleClose} eachDrinkData={eachDrinkData} /> */}
         </>
     )

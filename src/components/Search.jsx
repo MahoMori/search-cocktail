@@ -5,7 +5,8 @@ import axios from "axios";
 
 import Card from "./Card";
 import ModalComponent from "./ModalComponent";
-import ImageList from "@mui/material/ImageList";
+
+import { CustomImageList } from "../style";
 
 const Search = () => {
   const [open, setOpen] = useState(false);
@@ -116,7 +117,7 @@ const Search = () => {
 
       <main className="search-main">
         {drinksData && drinksData !== "none" ? (
-          <ImageList cols={4} gap={50}>
+          <CustomImageList cols={4} gap={50}>
             {drinksData.map((drink) => (
               <Card
                 drink={drink}
@@ -125,7 +126,7 @@ const Search = () => {
                 setEachDrinkData={setEachDrinkData}
               />
             ))}
-          </ImageList>
+          </CustomImageList>
         ) : (
           <p className="no-match">
             Forgive my ignorance. Could you try other words?

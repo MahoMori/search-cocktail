@@ -1,7 +1,7 @@
-import React from "react";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Card from "./Card";
 import ModalComponent from "./ModalComponent";
@@ -76,6 +76,8 @@ const Search = () => {
     });
   };
 
+  const matches = useMediaQuery("(max-width:1023px)");
+
   return (
     <>
       <section className="search">
@@ -112,6 +114,15 @@ const Search = () => {
             value={searchWord}
             onChange={(e) => setSearchWord(e.target.value)}
           />
+          {matches && (
+            <button
+              type="submit"
+              className="search-button button-clicked"
+              style={{ width: "150px", display: "block", margin: "10px auto" }}
+            >
+              Search
+            </button>
+          )}
         </form>
       </section>
 

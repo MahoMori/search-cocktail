@@ -29,7 +29,7 @@ function App() {
         <button className="keywords-or-list">
           <Link to="/">Home</Link>
         </button>
-        <button className="keywords-or-list">
+        <button className="keywords-or-list second">
           <Link to="/search">Search with Keywords</Link>
         </button>
         <button className="keywords-or-list">

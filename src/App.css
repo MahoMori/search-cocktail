@@ -64,6 +64,12 @@ header,
   color: #fff;
 }
 
+@media (max-width: 320px) {
+  .second {
+    margin: 10px 10px;
+  }
+}
+
 .home {
   margin: 70px 0;
 }
@@ -104,13 +110,6 @@ header,
   background-color: #15cc15;
 }
 
-/* Smartphone */
-@media (max-width: 320px) {
-  input {
-    width: 250px;
-  }
-}
-
 /* ----- search ----- */
 .search {
   margin-top: 70px;
@@ -133,6 +132,13 @@ header,
   font-family: "Pattaya", sans-serif;
 }
 
+/* Smartphone */
+@media (max-width: 320px) {
+  .search-input {
+    width: 250px !important;
+  }
+}
+
 .search-main {
   width: 90%;
   margin: 80px auto;
@@ -146,48 +152,6 @@ header,
   font-family: "Pattaya", sans-serif;
 }
 
-/* .MuiImageList-root = ImageList */
-/* .MuiImageList-root {
-  margin: 80px auto;
-} */
-
-/* .MuiImageList-root li = ImageListItem */
-/* .MuiImageList-root li {
-  cursor: pointer;
-} */
-
-/* .MuiImageListItemBar-title = ImageListItemBar */
-/* .MuiImageListItemBar-title {
-  letter-spacing: 0.05rem;
-  font-weight: bold;
-  font-family: "Arima Madurai", cursive;
-} */
-
-/* .MuiImageList-root = ImageList */
-/* Smartphone */
-/* @media (max-width: 500px) {
-  .MuiImageList-root {
-    grid-template-columns: 1fr !important;
-    gap: 30px !important;
-  }
-} */
-/* Tablet */
-/* @media (min-width: 501px) and (max-width: 768px) {
-  .MuiImageList-root {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 30px !important;
-  }
-} */
-/* Normal */
-@media (min-width: 769px) and (max-width: 1024px) {
-}
-/* @media (min-width: 1441px) {
-  .MuiImageList-root {
-    grid-template-columns: repeat(5, 1fr) !important;
-    gap: 50px !important;
-  }
-} */
-
 /* ----- modal ----- */
 .modal-name {
   text-align: center;
@@ -198,16 +162,6 @@ header,
   width: 100%;
   color: #d1d1d1;
 }
-
-/* .MuiBox-root = Box */
-/* .MuiBox-root {
-  font-family: "Arima Madurai", cursive;
-  -ms-overflow-style: none;
-} */
-
-/* .MuiBox-root::-webkit-scrollbar {
-  display: none;
-} */
 
 .modal-contents p {
   margin: 5px 0;

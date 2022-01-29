@@ -1,8 +1,9 @@
 import React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-import ListComponent from "./ListComponent";
+import ImageListComponent from "./ImageListComponent";
 
 const alphanumeric = "0123456789abcdefghijklmnopqrstuvwxyz";
 
@@ -16,6 +17,25 @@ const List = ({
   eachDrinkData,
 }) => {
   const [letter, setLetter] = useState("");
+
+  useEffect(() => {
+    if (letter) {
+      axios(
+        `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
+      ).then((response) => {
+        let drinksList = response.data.drinks;
+        setDrinksData([]);
+        if (drinksList === null) {
+          setDrinksData("none");
+        } else {
+          drinksList.map((drink) =>
+            setDrinksData((prevDrinksData) => [...prevDrinksData, drink])
+          );
+        }
+        setLetter("");
+      });
+    }
+  }, [letter]);
 
   return (
     <>
@@ -36,19 +56,14 @@ const List = ({
         <div className="clr"></div>
       </section>
 
-      <main className="search-list-main">
-        <ListComponent
-          letter={letter}
-          setLetter={setLetter}
-          drinksData={drinksData}
-          setDrinksData={setDrinksData}
-          handleOpen={handleOpen}
-          setEachDrinkData={setEachDrinkData}
-          open={open}
-          handleClose={handleClose}
-          eachDrinkData={eachDrinkData}
-        />
-      </main>
+      <ImageListComponent
+        drinksData={drinksData}
+        handleOpen={handleOpen}
+        setEachDrinkData={setEachDrinkData}
+        open={open}
+        handleClose={handleClose}
+        eachDrinkData={eachDrinkData}
+      />
     </>
   );
 };

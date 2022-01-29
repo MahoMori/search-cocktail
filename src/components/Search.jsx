@@ -3,10 +3,7 @@ import axios from "axios";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import Card from "./Card";
-import ModalComponent from "./ModalComponent";
-
-import { CustomImageList } from "../style";
+import ImageListComponent from "./ImageListComponent";
 
 const Search = () => {
   const [open, setOpen] = useState(false);
@@ -126,29 +123,14 @@ const Search = () => {
         </form>
       </section>
 
-      <main className="search-list-main">
-        {drinksData && drinksData !== "none" ? (
-          <CustomImageList cols={4} gap={50}>
-            {drinksData.map((drink) => (
-              <Card
-                drink={drink}
-                key={drink.idDrink}
-                handleOpen={handleOpen}
-                setEachDrinkData={setEachDrinkData}
-              />
-            ))}
-          </CustomImageList>
-        ) : (
-          <p className="no-match">
-            Forgive my ignorance. Could you try other words?
-          </p>
-        )}
-        <ModalComponent
-          open={open}
-          handleClose={handleClose}
-          eachDrinkData={eachDrinkData}
-        />
-      </main>
+      <ImageListComponent
+        drinksData={drinksData}
+        handleOpen={handleOpen}
+        setEachDrinkData={setEachDrinkData}
+        open={open}
+        handleClose={handleClose}
+        eachDrinkData={eachDrinkData}
+      />
     </>
   );
 };

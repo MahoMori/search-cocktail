@@ -2,7 +2,8 @@
   text-align: center;
 }
 
-header, .special-txt {
+header,
+.special-txt {
   color: #fff;
   letter-spacing: 0.2rem;
 }
@@ -11,25 +12,22 @@ header, .special-txt {
   color: #15cc15;
 }
 
-.header-subtitle{
+.header-subtitle {
   font-style: italic;
   letter-spacing: 0.2rem;
   font-weight: lighter;
 
-  text-shadow: 
-    0 -1px 0 #fff, 
-    0 1px 0 rgb(21, 204, 21), 
-    0 2px 0 rgb(19, 202, 19), 
+  text-shadow: 0 -1px 0 #fff, 0 1px 0 rgb(21, 204, 21), 0 2px 0 rgb(19, 202, 19),
     0 3px 0 rgb(17, 200, 17);
 }
 
-.keywords-or-list{
+.keywords-or-list {
   border-bottom: solid 3px #15cc15;
   background-color: transparent;
   border-top: none;
   border-left: none;
   border-right: none;
-  font-family: 'Pattaya', sans-serif;
+  font-family: "Pattaya", sans-serif;
   letter-spacing: 0.1rem;
   cursor: pointer;
   font-size: 1.25rem;
@@ -40,8 +38,9 @@ header, .special-txt {
   padding: 0 45px;
 }
 
-.keywords-or-list::before, .keywords-or-list::after{
-  content: '';
+.keywords-or-list::before,
+.keywords-or-list::after {
+  content: "";
   position: absolute;
   top: 50%;
   display: inline-block;
@@ -52,12 +51,12 @@ header, .special-txt {
   transform: rotate(-60deg);
 }
 
-.keywords-or-list::before{
-  left:0;
+.keywords-or-list::before {
+  left: 0;
 }
 
-.keywords-or-list::after{
-  right:0;
+.keywords-or-list::after {
+  right: 0;
 }
 
 .keywords-or-list a {
@@ -83,8 +82,6 @@ header, .special-txt {
   right: 0;
 }
 
-
-
 .search-button {
   border: solid #15cc15 2px;
   border-radius: 2px;
@@ -92,7 +89,7 @@ header, .special-txt {
   height: 40px;
   margin: 10px 30px;
   font-size: 1.25rem;
-  font-family: 'Pattaya', sans-serif;
+  font-family: "Pattaya", sans-serif;
   background-color: transparent;
   color: #fff;
   letter-spacing: 0.1rem;
@@ -107,7 +104,19 @@ header, .special-txt {
   background-color: #15cc15;
 }
 
-input {
+/* Smartphone */
+@media (max-width: 320px) {
+  input {
+    width: 250px;
+  }
+}
+
+/* ----- search ----- */
+.search {
+  margin-top: 70px;
+}
+
+.search-input {
   outline: none;
   border-bottom: solid #15cc15 2px;
   border-top: none;
@@ -121,57 +130,23 @@ input {
   letter-spacing: 0.1rem;
   text-align: center;
   padding: 0 15px;
-  font-family: 'Pattaya', sans-serif;
+  font-family: "Pattaya", sans-serif;
 }
 
-/* Smartphone */
-@media (max-width: 320px) {
-
-  input{
-    width: 250px;
-  }
-
-}
-
-@media (min-width: 321px) and (max-width: 500px) {
-
-}
-
-/* Tablet */
-@media (min-width: 501px) and (max-width: 768px) {
-
-}
-
-/* Normal */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-}
-
-@media (min-width: 1441px) {
-
-}
-
-
-
-
-/* ----- search ----- */
-.search{
-  margin-top: 70px;
-}
-
-main {
+.search-main {
   width: 90%;
   margin: 80px auto;
-  font-family: 'Arima Madurai', cursive;
+  font-family: "Arima Madurai", cursive;
 }
 
 .no-match {
   color: #fff;
   font-size: 1.25rem;
   letter-spacing: 0.1rem;
-  font-family: 'Pattaya', sans-serif;
+  font-family: "Pattaya", sans-serif;
 }
 
+/* .MuiImageList-root = ImageList */
 .MuiImageList-root {
   margin: 80px auto;
 }
@@ -180,47 +155,39 @@ main {
   cursor: pointer;
 }
 
+/* .MuiImageListItemBar-title = Card */
 .MuiImageListItemBar-title {
   letter-spacing: 0.05rem;
   font-weight: bold;
-  font-family: 'Arima Madurai', cursive;
+  font-family: "Arima Madurai", cursive;
 }
 
 /* Smartphone */
 @media (max-width: 500px) {
-
   .MuiImageList-root {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
   }
-  
 }
 
 /* Tablet */
 @media (min-width: 501px) and (max-width: 768px) {
-
   .MuiImageList-root {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 30px !important;
   }
-
 }
 
 /* Normal */
 @media (min-width: 769px) and (max-width: 1024px) {
-
 }
 
 @media (min-width: 1441px) {
-
   .MuiImageList-root {
     grid-template-columns: repeat(5, 1fr) !important;
     gap: 50px !important;
   }
-
 }
-
-
 
 /* ----- modal ----- */
 .modal-name {
@@ -234,11 +201,11 @@ main {
 }
 
 .MuiBox-root {
-  font-family: 'Arima Madurai', cursive;
+  font-family: "Arima Madurai", cursive;
   -ms-overflow-style: none;
 }
 
-.MuiBox-root::-webkit-scrollbar{
+.MuiBox-root::-webkit-scrollbar {
   display: none;
 }
 
@@ -266,7 +233,6 @@ main {
   margin-left: 20px;
 }
 
-
 /* Smartphone */
 @media (max-width: 320px) {
   /* .css-mhc70k-MuiGrid-root {
@@ -275,26 +241,18 @@ main {
 }
 
 @media (min-width: 321px) and (max-width: 500px) {
-
 }
 
 /* Tablet */
 @media (min-width: 501px) and (max-width: 768px) {
-
 }
 
 /* Normal */
 @media (min-width: 769px) and (max-width: 1024px) {
-
 }
 
 @media (min-width: 1441px) {
-
 }
-
-
-
-
 
 /* ----- list ----- */
 .list {

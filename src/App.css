@@ -88,6 +88,7 @@ header,
   right: 0;
 }
 
+/* ----- search ----- */
 .search-button {
   border: solid #15cc15 2px;
   border-radius: 2px;
@@ -110,8 +111,8 @@ header,
   background-color: #15cc15;
 }
 
-/* ----- search ----- */
-.search {
+.search,
+.list {
   margin-top: 70px;
 }
 
@@ -188,10 +189,6 @@ header,
 }
 
 /* ----- list ----- */
-.list {
-  margin: 70px auto;
-}
-
 .list-li {
   color: #fff;
   list-style: none;

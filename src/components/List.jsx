@@ -18,33 +18,38 @@ const List = ({
   const [letter, setLetter] = useState("");
 
   return (
-    <section className="list">
-      <ul>
-        {alphanumeric.split("").map((letter, i) => (
-          <li
-            key={i}
-            onClick={() => {
-              setLetter(letter);
-            }}
-            className="list-li"
-          >
-            {letter}
-          </li>
-        ))}
-      </ul>
-      <div className="clr"></div>
-      <ListComponent
-        letter={letter}
-        setLetter={setLetter}
-        drinksData={drinksData}
-        setDrinksData={setDrinksData}
-        handleOpen={handleOpen}
-        setEachDrinkData={setEachDrinkData}
-        open={open}
-        handleClose={handleClose}
-        eachDrinkData={eachDrinkData}
-      />
-    </section>
+    <>
+      <section className="list">
+        <ul>
+          {alphanumeric.split("").map((letter, i) => (
+            <li
+              key={i}
+              onClick={() => {
+                setLetter(letter);
+              }}
+              className="list-li"
+            >
+              {letter}
+            </li>
+          ))}
+        </ul>
+        <div className="clr"></div>
+      </section>
+
+      <main className="search-main">
+        <ListComponent
+          letter={letter}
+          setLetter={setLetter}
+          drinksData={drinksData}
+          setDrinksData={setDrinksData}
+          handleOpen={handleOpen}
+          setEachDrinkData={setEachDrinkData}
+          open={open}
+          handleClose={handleClose}
+          eachDrinkData={eachDrinkData}
+        />
+      </main>
+    </>
   );
 };
 

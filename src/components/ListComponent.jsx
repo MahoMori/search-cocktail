@@ -8,6 +8,7 @@ import Card from "./Card";
 import ModalComponent from "./ModalComponent";
 
 import ImageList from "@mui/material/ImageList";
+import { CustomImageList } from "../style";
 
 const ListComponent = ({
   setLetter,
@@ -43,7 +44,7 @@ const ListComponent = ({
     <>
       {drinksData && drinksData !== "none" ? (
         <>
-          <ImageList cols={4} gap={50}>
+          <CustomImageList cols={4} gap={50}>
             {drinksData.map((drink) => (
               <Card
                 drink={drink}
@@ -52,7 +53,7 @@ const ListComponent = ({
                 setEachDrinkData={setEachDrinkData}
               />
             ))}
-          </ImageList>
+          </CustomImageList>
         </>
       ) : (
         <p className="no-match">

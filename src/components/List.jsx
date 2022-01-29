@@ -36,7 +36,7 @@ const List = ({
         <div className="clr"></div>
       </section>
 
-      <main className="search-main">
+      <main className="search-list-main">
         <ListComponent
           letter={letter}
           setLetter={setLetter}

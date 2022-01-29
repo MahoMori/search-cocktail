@@ -126,7 +126,7 @@ const Search = () => {
         </form>
       </section>
 
-      <main className="search-main">
+      <main className="search-list-main">
         {drinksData && drinksData !== "none" ? (
           <CustomImageList cols={4} gap={50}>
             {drinksData.map((drink) => (
